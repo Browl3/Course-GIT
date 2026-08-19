@@ -25,8 +25,12 @@ create table funcionario (
 	data_nascimento date not null, 
 	cidade varchar(100) not null, 
 	estado char(2) not null ,
-	data_cadastro date not null
+	data_cadastro date not null,
+    cargo varchar(50) not null,
+	salario decimal
 
+	
 );
+
 show tables; 
 
