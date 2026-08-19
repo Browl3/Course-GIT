@@ -7,13 +7,12 @@ create table cliente (
     nome varchar(100) not null ,
 	cpf varchar(14) not null unique ,
 	email varchar(100) not null unique, 
-	telefone varchar(16) not null unique;
+	telefone varchar(16) not null unique,
+    data_nascimento date not null, 
+    cidade varchar(100) not null, 
+    estado char(2) not null ,
+    
 
 
 )
-
-
-
-
-
 
