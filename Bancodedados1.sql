@@ -63,13 +63,16 @@ create table produtos (
 
 show tables; 
 
-alter table produto add constraint fk_produto_categoria foreign key
-(id_categoria) references categoria (id_categoria),
-add constraint fk_produto_categoria  foreign key (id_fornecedor)
-references fornecedor(id_fornecedor);
+ALTER TABLE produto 
+  ADD CONSTRAINT fk_produto_categoria FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria),
+  ADD CONSTRAINT fk_produto_fornecedor FOREIGN KEY (id_fornecedor) REFERENCES fornecedor(id_fornecedor);
 
 
+select * from produto;
+create table estoque (
+id_estoque auto_imcrement primary key,
+id_produto int not null unique, 
+quantidade int not null default , 
 
-
-
+)
 
