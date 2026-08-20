@@ -68,16 +68,15 @@ ALTER TABLE produto
 
 
 select * from produto;
-create table estoque (
-id_estoque int auto_increment primary key,
-id_produto int not null unique, 
-quantidade int not null default 0, 
-estoque_minimo int not null default 5, 
-ultima_atualizacao datetime not null, 
 
-foreign key (id_produto) references produto(id_produto)
+CREATE TABLE estoque (
+  id_estoque int auto_increment primary key,
+  id_produto int not null unique, 
+  quantidade int not null default 0, 
+  estoque_minimo int not null default 5, 
+  
+  -- The database will now manage this column automatically
+  ultima_atualizacao datetime not null default current_timestamp on update current_timestamp, 
 
+  foreign key (id_produto) references produto(id_produto)
 );
-
-
-show tables; 
