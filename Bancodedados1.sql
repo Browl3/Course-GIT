@@ -11,12 +11,10 @@ create table cliente (
 	cidade varchar(100) not null, 
 	estado char(2) not null ,
 	data_cadastro date not null
-
 );
 
 
 create table funcionario (
-	
 	id_client int auto_increment primary key,
 	nome varchar(100) not null ,
 	cpf varchar(14) not null unique ,
@@ -29,12 +27,10 @@ create table funcionario (
     cargo varchar(50) not null,
 	salario decimal(18, 2) not null,
     data_admissao date not null
-
 );
 
 
 create table fornecedor (
-	
     id_fornecedor int auto_increment primary key, 
     razao_social varchar(150) not null, 
     nome_fantasia varchar(150) not null, 
@@ -45,17 +41,25 @@ create table fornecedor (
     estado char(2) not null
 );
 
-create table produtos (
 
+create table categoria (
+ id_categoria int auto_increment primary key,
+ nome varchar(100) not null unique, 
+ descricao varchar(255)
+);
+
+create table produtos (
 	id_produto int auto_increment primary key, 
     id_categoria int not null,  
     id_fornecedor int not null, 
     nome varchar(150) not null, 
     descricao TEXT ,
-	preco decimal(10, 2) not null
-
-
+	preco decimal(10, 2) not null,
+	custo decimal(10, 2) not null,
+	codigo_barras varchar(100) not null,
+    data_cadastro date not null 
 );
+
 
 show tables; 
 
