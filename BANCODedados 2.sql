@@ -87,3 +87,5 @@ create table item_pedido (
 	constraint fk_item_pedido foreign key (id_pedido) references pedido(id_pedido),
 	constraint fk_item_produto foreign key (id_produto) references produto(id_produto)
 );
+
+show tables
