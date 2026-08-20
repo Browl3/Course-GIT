@@ -72,7 +72,8 @@ select * from produto;
 create table estoque (
 id_estoque auto_imcrement primary key,
 id_produto int not null unique, 
-quantidade int not null default , 
-
+quantidade int not null default, 
+estoque_minimo int not null default, 
+ultima_atualizacao 
 )
 
