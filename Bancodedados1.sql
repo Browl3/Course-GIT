@@ -32,5 +32,21 @@ create table funcionario (
 
 );
 
+
+create table fornecedor (
+	
+    id_fornecedor int auto_increment primary key, 
+    razao_social varchar(150) not null, 
+    nome_fantasia varchar(150) not null, 
+    cnpj varchar(19) not null unique,
+    email varchar(50) not null
+    
+
+);
 show tables; 
+
+
+
+
+
 
