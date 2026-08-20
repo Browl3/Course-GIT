@@ -63,6 +63,11 @@ create table produtos (
 
 show tables; 
 
+alter table produto add constraint fk_produto_categoria foreign key
+(id_categoria) references categoria (id_categoria),
+add constraint fk_produto_categoria  foreign key (id_fornecedor)
+references fornecedor(id_fornecedor);
+
 
 
 
