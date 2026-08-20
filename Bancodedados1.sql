@@ -45,14 +45,17 @@ create table fornecedor (
     estado char(2) not null
 );
 
-create table categoria (
+create table produtos (
 
- id_categoria int auto_increment primary key,
- nome varchar(100) not null unique, 
- descricao varchar(255)
+	id_produto int auto_increment primary key, 
+    id_categoria int not null,  
+    id_fornecedor int not null, 
+    nome varchar(150) not null, 
+    descricao TEXT ,
+	preco decimal(10, 2) not null
+
 
 );
-
 
 show tables; 
 
