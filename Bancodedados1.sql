@@ -39,9 +39,10 @@ create table fornecedor (
     razao_social varchar(150) not null, 
     nome_fantasia varchar(150) not null, 
     cnpj varchar(19) not null unique,
-    email varchar(50) not null
-    
-
+    email varchar(50) not null,
+    telefone varchar(20) not null,
+	cidade varchar(50) not null,
+    estado char(2) not null
 );
 show tables; 
 
