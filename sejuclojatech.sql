@@ -16,8 +16,10 @@ data_nasc date not null,
 cidade varchar (50) not null,
 estado char (2) not null,
 data_cadastro date not null
-select * from cliente;
+
 );
+
+select * from cliente;
 
 create table funcionario (
 id_funcionario int auto_increment primary key,
@@ -29,6 +31,7 @@ cargo varchar (50) not null,
 salario decimal(10, 2) not null,
 data_admissao date not null
 );
+select * from funcionario;
 
 create table fornecedor (
 id_fornecedor int auto_increment primary key,
@@ -40,12 +43,14 @@ telefone varchar(20) not null,
 cidade varchar (50) not null,
 estado char(2) not null
 );
+select * from fornecedor;
 
 create table categoria(
 id_categoria int auto_increment primary key,
 nome varchar (100) not null unique,
 descricao varchar (225)
 );
+select * from categoria;
 
 create table produto(
  id_produto int auto_increment primary key,
@@ -63,7 +68,8 @@ create table produto(
  foreign key (id_categoria) references categoria(id_categoria),
  foreign key (id_fornecedor) references fornecedor(id_fornecedor)
  );
- 
+ select * from produto;
+
 
 create table estoque(
  id_estoque int auto_increment primary key,
@@ -74,7 +80,8 @@ create table estoque(
  
  foreign key (id_produto) references produto(id_produto)
  );
- 
+ select * from estoque;
+
 create table pedido (
  id_pedido int auto_increment primary key,
  id_cliente int not null,
@@ -83,10 +90,11 @@ create table pedido (
  status varchar (30) not null,
  valor_total decimal(10,2) not null,
  
- select * from pedido 
+ 
  foreign key (id_cliente) references cliente(id_cliente),
  foreign key (id_funcionario) references funcionario(id_funcionario)
  );
+select * from pedido;
 
 create table item_pedido(
 id_item int auto_increment primary key,
@@ -99,6 +107,7 @@ desconto decimal (10,2) default 0,
 foreign key (id_pedido) references pedido(id_pedido),
 foreign key (id_produto) references produto(id_produto)
 );
+select * from item_pedido;
 
 create table pagamento (
 id_pagamento int auto_increment primary key,
@@ -109,7 +118,7 @@ forma_pagamento varchar(30) not null,
 status varchar(20) not null,
 foreign key (id_pedido) references pedido(id_pedido)
 );
-
+select * from pedido;
 
 INSERT INTO cliente (nome, cpf, email, telefone, data_nasc, cidade, estado, data_cadastro) VALUES
 ('Ana Silva', '123.456.789-01', 'ana.silva1@email.com', '(11) 98765-4321', '1985-03-15', 'São Paulo', 'SP', '2023-01-10'),
@@ -655,24 +664,23 @@ INSERT INTO pedido (id_cliente, id_funcionario, data_pedido, valor_total, status
 (3, 1, '2024-02-03 16:45:00', 350.00, 'CONCLUIDO'),
 (4, 3, '2024-02-05 11:00:00', 14500.00, 'CONCLUIDO'),
 (5, 2, '2024-02-06 09:20:00', 480.00, 'CANCELADO');
-
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario) VALUES 
+
 -- Pedido 1 (Tech Solutions - 2x Notebook Pro 15)
-(1, 151, 2, 4500.00), 
+(1, 1, 2, 4500.00),
 
--- Pedido 2 (João Pedro - 1x Monitor Gamer 27 + 1x Teclado Mecânico)
-(2, 153, 1, 1450.00), 
-(2, 155, 1, 350.00), 
+-- Pedido 2 (João Pedro - 1x Monitor Gamer 27 + 1x Teclado Mecânico RGB)
+(2, 3, 1, 1450.00),
+(2, 5, 1, 350.00),
 
--- Pedido 3 (Maria Eduarda - 1x Teclado Mecânico)
-(3, 155, 1, 350.00), 
+-- Pedido 3 (Maria Eduarda - 1x Teclado Mecânico RGB)
+(3, 5, 1, 350.00),
 
--- Pedido 4 (Consultoria Alfa - 1x Servidor Tower)
-(4, 296, 1, 14500.00), 
+-- Pedido 4 (Consultoria Alfa - 1x Computador Servidor Tower)
+(4, 146, 1, 14500.00),
 
 -- Pedido 5 (Lucas Pereira - 1x SSD NVMe 1TB - Cancelado)
-(5, 168, 1, 480.00);
-
+(5, 18, 1, 480.00);
 INSERT INTO pagamento (id_pedido, forma_pagamento, valor, data_pagamento, status) VALUES
 (1, 'PIX', 9000.00, '2024-02-01 10:32:00', 'APROVADO'),
 (2, 'Cartão de Crédito', 1800.00, '2024-02-02 14:16:00', 'APROVADO'),
