@@ -16,6 +16,7 @@ data_nasc date not null,
 cidade varchar (50) not null,
 estado char (2) not null,
 data_cadastro date not null
+select * from cliente;
 );
 
 create table funcionario (
