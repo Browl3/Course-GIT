@@ -664,6 +664,7 @@ INSERT INTO pedido (id_cliente, id_funcionario, data_pedido, valor_total, status
 (3, 1, '2024-02-03 16:45:00', 350.00, 'CONCLUIDO'),
 (4, 3, '2024-02-05 11:00:00', 14500.00, 'CONCLUIDO'),
 (5, 2, '2024-02-06 09:20:00', 480.00, 'CANCELADO');
+
 INSERT INTO item_pedido (id_pedido, id_produto, quantidade, preco_unitario) VALUES 
 
 -- Pedido 1 (Tech Solutions - 2x Notebook Pro 15)
