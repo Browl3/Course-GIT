@@ -687,3 +687,11 @@ INSERT INTO pagamento (id_pedido, forma_pagamento, valor, data_pagamento, status
 (2, 'Cartão de Crédito', 1800.00, '2024-02-02 14:16:00', 'APROVADO'),
 (3, 'Cartão de Débito', 350.00, '2024-02-03 16:46:00', 'APROVADO'),
 (4, 'Boleto Bancário', 14500.00, '2024-02-06 08:00:00', 'APROVADO');
+
+
+
+select count(*) as quantidade_funcionario,sum(salario) as soma_salario  from funcionario;
+
+
+select cidade, count(*) as quantidade from cliente group by cidade;
+
