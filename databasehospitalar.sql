@@ -65,15 +65,40 @@ controlado tinyint(1)
 );
 
 create table consultas (
-
 id int auto_increment primary key,
 paciente_id int not null,
 medico_id int not null,
-hospital_id int not null,
-data_consulta date, 
-hora_consulta time, 
+hospital_id int,
+convenio_id int,
+data_consulta date,
+hora_consulta time,
 tipo_consulta varchar(50),
-status varchar (20),
+status varchar(20),
 valor decimal(8, 2)
+);
 
-); 
+create table exames (
+id int auto_increment primary key,
+paciente_id int not null,
+medico_id int,
+tipo_exame varchar(100),
+data_exame date,
+resultado_exame varchar (30),
+valor decimal(8, 2),a
+status varchar(20)
+);
+
+create table prescricoes (
+id int auto_increment primary key,
+consulta_id int not null,
+medicamentos_id int not null,
+dosagem varchar(50),
+frequencia varchar(50),
+duracao_dias int
+);
+
+
+
+
+
+
