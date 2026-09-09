@@ -2,6 +2,8 @@ create database sistema_hospitalar;
 
 use sistema_hospitalar;
 
+
+
 create table  hospitais (
 id int auto_increment primary key,
 nome varchar(150) not null, 
@@ -84,7 +86,7 @@ medico_id int,
 tipo_exame varchar(100),
 data_exame date,
 resultado_exame varchar (30),
-valor decimal(8, 2),a
+valor decimal(8, 2),
 status varchar(20)
 );
 
@@ -97,8 +99,23 @@ frequencia varchar(50),
 duracao_dias int
 );
 
+create table internacoes (
+id int auto_increment primary key,
+paciente_id int not null, 
+medico_id int, 
+hospital_id int, 
+data_entrada date, 
+data_saida date, 
+motivo varchar(100),
+quarto varchar(100),
+valor_diaria decimal(10, 2),
+status varchar(20)
+
+);
 
 
+
+INSERT INTO especialidades (id, nome, descricao) VALUES(1, 'Cardiologia', 'Diagnóstico e tratamento de doenças do coração e sistema circulatório'),(2, 'Pediatria', 'Cuidados médicos voltados para crianças e adolescentes'),(3, 'Ortopedia', 'Tratamento de lesões e doenças do sistema musculoesquelético'),(4, 'Dermatologia', 'Diagnóstico e tratamento de doenças da pele'),(5, 'Ginecologia', 'Saúde do sistema reprodutor feminino'),(6, 'Neurologia', 'Tratamento de doenças do sistema nervoso'),(7, 'Oftalmologia', 'Diagnóstico e tratamento de doenças oculares'),(8, 'Psiquiatria', 'Tratamento de transtornos mentais e emocionais'),(9, 'Endocrinologia', 'Tratamento de distúrbios hormonais e metabólicos'),(10, 'Urologia', 'Tratamento do sistema urinário e reprodutor masculino'),(11, 'Oncologia', 'Diagnóstico e tratamento de cânceres'),(12, 'Otorrinolaringologia', 'Tratamento de ouvido, nariz e garganta'),(13, 'Gastroenterologia', 'Tratamento do sistema digestivo'),(14, 'Pneumologia', 'Tratamento de doenças respiratórias'),(15, 'Reumatologia', 'Tratamento de doenças autoimunes e articulares'),(16, 'Clínica Geral', 'Atendimento médico geral e preventivo'),(17, 'Anestesiologia', 'Administração de anestesia em procedimentos cirúrgicos'),(18, 'Cirurgia Geral', 'Procedimentos cirúrgicos diversos'),(19, 'Nefrologia', 'Tratamento de doenças renais'),(20, 'Infectologia', 'Tratamento de doenças infecciosas');
 
 
 
