@@ -35,12 +35,18 @@ h1 {
 
 /* Destaque para o cabeçalho (thead) e rodapé (tfoot) */
 .tabela-compras thead {
-    background-color: #2c2c2c; /* Fundo do cabeçalho */
+    background-color: #9af804; /* Fundo do cabeçalho */
     color: #14f300;
 }
 
+
 .tabela-compras tfoot {
     background-color: #2c2c2c; /* Fundo do rodapé (Total) */
+    font-weight: bold;
+    color: #2bff00;
+}
+.tabela-compras tfoot td{
+    background-color: #0037eb; /* Fundo do rodapé (Total) */
     font-weight: bold;
     color: #2bff00;
 }
@@ -55,4 +61,3 @@ h1 {
     padding: 12px;
     text-align: left;
 }
-
