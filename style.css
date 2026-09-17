@@ -6,7 +6,7 @@
 
 /* Configuração geral do tema escuro para a página inteira */
 body {
-    background-color: #121212; /* Fundo cinza bem escuro (quase preto) */
+    background-color: #000000; /* Fundo cinza bem escuro (quase preto) */
     color: #e0e0e0;            /* Cor do texto principal (branco suave para não cansar a vista) */
     font-family: Arial, sans-serif;
     padding: 20px;             /* Um espaçamento para a tabela não colar nas bordas */
