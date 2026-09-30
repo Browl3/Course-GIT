@@ -3,55 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lista tabelas e formularios </title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
 </head>
+
 <body>
 
-    <table class="tabela-compras"> 
-        <thead>
-            <tr>
-                <th>ITEM</th>
-                <th>Quantidade</th>
-                <th>Preço unitário</th>
-                <th>Subtotal</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Arroz</td>
-                <td>2</td>
-                <td>R$ 5,50</td>
-                <td>R$ 11,00</td> <!-- Corrigido o cálculo de 2 x 5,50 -->
-            </tr>
-        </tbody>
- 
-        <tbody>
-            <tr>
-                <td>Feijao</td>
-                <td>1</td>
-                <td>R$ 7,50</td>
-                <td>R$ 7,50</td> <!-- Corrigido o cálculo de 2 x 5,50 -->
-            </tr>
-        </tbody>
-    
-        <tbody>
-            <tr>
-                <td>Leite</td>
-                <td>3</td>
-                <td>R$ 4,50</td>
-                <td>R$ 12,60</td> <!-- Corrigido o cálculo de 2 x 5,50 -->
-            </tr>
-        </tbody>
+    <h1>Cadastro</h1>
 
-        <tfoot>
-            <tr> 
-                <td colspan="3">TOTAL</td>
-                <td>R$ 30,10</td>
-            </tr>
-        </tfoot>
+    <form action="#" method="post">
 
-    </table>
+        <!-- Nome -->
+        <label for="nome">Nome:</label>
+        <input 
+            type="text" 
+            name="nome" 
+            id="nome"
+            placeholder="Digite seu nome"
+        >
+
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input 
+            type="email" 
+            name="email" 
+            id="email"
+            placeholder="Digite seu email"
+        >
+
+        <br><br>
+
+        <!-- Senha -->
+        <label for="senha">Senha:</label>
+        <input 
+            type="password" 
+            name="senha" 
+            id="senha"
+            placeholder="Digite sua senha"
+        >
+
+        <br><br>
+
+        <!-- Idade -->
+        <label for="idade">Idade:</label>
+        <input 
+            type="number" 
+            name="idade" 
+            id="idade"
+            min="1"
+            max="120"
+        >
+
+        <br><br>
+
+        <!-- Data -->
+        <label for="nascimento">Data de nascimento:</label>
+        <input 
+            type="date" 
+            name="nascimento" 
+            id="nascimento"
+        >
+
+        <br><br>
+
+        <!-- Sexo -->
+        <p>Sexo:</p>
+
+        <input type="radio" name="sexo" id="masculino" value="masculino">
+        <label for="masculino">Masculino</label>
+
+        <input type="radio" name="sexo" id="feminino" value="feminino">
+        <label for="feminino">Feminino</label>
+
+        <br><br>
+
+        <!-- Checkbox -->
+        <p>Quais linguagens você conhece?</p>
+
+        <input type="checkbox" name="linguagens" value="html" id="html">
+        <label for="html">HTML</label>
+
+        <input type="checkbox" name="linguagens" value="css" id="css">
+        <label for="css">CSS</label>
+
+        <input type="checkbox" name="linguagens" value="javascript" id="javascript">
+        <label for="javascript">JavaScript</label>
+
+        <br><br>
+
+        <!-- Select -->
+        <label for="cidade">Cidade:</label>
+
+        <select name="cidade" id="cidade">
+            <option value="">Selecione</option>
+            <option value="sp">São Paulo</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="mg">Minas Gerais</option>
+            <option value="ba">Bahia</option>
+        </select>
+
+        <br><br>
+
+        <!-- Textarea -->
+        <label for="sobre">Fale sobre você:</label>
+        <br>
+
+        <textarea 
+            name="sobre" 
+            id="sobre"
+            rows="5"
+            cols="40"
+            placeholder="Digite aqui..."
+        ></textarea>
+
+        <br><br>
+
+        <!-- Telefone -->
+        <label for="telefone">Telefone:</label>
+        <input 
+            type="tel" 
+            name="telefone" 
+            id="telefone"
+            placeholder="(00) 00000-0000"
+        >
+
+        <br><br>
+
+        <!-- Cor -->
+        <label for="cor">Escolha uma cor:</label>
+        <input type="color" name="cor" id="cor">
+
+        <br><br>
+
+        <!-- Arquivo -->
+        <label for="arquivo">Enviar foto:</label>
+        <input type="file" name="arquivo" id="arquivo">
+
+        <br><br>
+
+        <!-- Aceitar termos -->
+        <input type="checkbox" name="termos" id="termos">
+        <label for="termos">
+            Aceito os termos
+        </label>
+
+        <br><br>
+
+        <!-- Botões -->
+        <input type="submit" value="Enviar cadastro">
+
+        <input type="reset" value="Limpar">
+
+    </form>
 
 </body>
 </html>
